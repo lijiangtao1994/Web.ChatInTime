@@ -1,0 +1,594 @@
+﻿@{ Layout = null; }
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link href="~/Scripts/bootstrap/bootstrap.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap/jquery-2.1.4.js"></script>
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+    <script src="~/Scripts/jquery.signalR-2.4.1.js"></script>
+    <script src="~/Scripts/bootstrap/bootstrap-3.3.6.js"></script>
+    <script src="~/Scripts/layer/layer.js"></script>
+    <script src="~/wwwroot/layer/layer.js"></script>
+    <script src="~/signalr/hubs"></script>
+
+    <script src="~/Scripts/Record/recorder-core.js"></script>
+    <script src="~/Scripts/Record/Engine/mp3.js"></script>
+    <script src="~/Scripts/Record/Engine/mp3-engine.js"></script>
+    <script src="~/Scripts/Record/Extensions/frequency.histogram.view.js"></script>
+    <script src="~/Scripts/Record/Extensions/lib.fft.js"></script>
+
+    <style type="text/css">
+        ul, li {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+        }
+
+        .panel-body {
+            padding: 0px;
+        }
+
+        .panel {
+            margin: 0px !important;
+        }
+
+
+        .panel-primary > .panel-heading {
+            font-size: 18px;
+            color: #fff;
+            background-color: #2f9b6f;
+            border: none !important;
+            font-weight: bold;
+        }
+
+            .panel-primary > .panel-heading img {
+                margin-right: 7px;
+            }
+
+                .panel-primary > .panel-heading img.add {
+                    float: right;
+                }
+
+        .btn-info {
+            color: #fff;
+            background-color: #e4e4e4;
+            border-color: #e4e4e4;
+        }
+
+        .panel-primary {
+            border: none !important;
+        }
+
+            .panel-primary.panel-left {
+                width: 260px;
+                box-shadow: 0px 0px 10px 0px #ccc;
+            }
+
+            .panel-primary.panel-right {
+                width: 200px;
+            }
+
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            position: relative;
+            min-height: 1px;
+            /* padding-right: 15px; */
+            padding-left: 0px;
+        }
+
+        .panel-primary .time {
+            width: 100%;
+            overflow: hidden;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+        }
+
+            .panel-primary .time span {
+                color: #dfdfdf;
+                font-size: 12px;
+            }
+
+
+        #div_member ul a {
+            display: block;
+            width: 260px;
+            height: 60px;
+            border-bottom: solid 1px #ececec;
+            color: #959595;
+            font-size: 16px;
+        }
+
+            #div_member ul a.active {
+                background: #efefef;
+                color: #484848
+            }
+
+            #div_member ul a li {
+                margin-top: 18px;
+                width: 258px;
+                float: left;
+            }
+
+        .col-md-8 .panel-heading {
+            background: #eeeeee;
+            color: #484848;
+            text-align: center;
+        }
+
+        #div_msg .clear-float {
+            padding: 0px 63px;
+            position: relative
+        }
+
+
+
+        #div_msg .clear-left img {
+            left: 16px;
+        }
+
+        #div_msg .clear-right img {
+            right: 16px;
+        }
+
+        #div_msg .clear-float .Teacher {
+            color: #cecdcd;
+            font-size: 14px;
+        }
+
+        #div_msg .clear-float img {
+            vertical-align: top;
+            height: 40px;
+            width: 40px;
+            position: absolute;
+            top: 0px;
+        }
+
+        #div_msg .article {
+            padding: 10px;
+            background: #f6f6f6;
+            border-radius: 10px;
+            color: #424242;
+            font-size: 16px;
+            display: inline-block;
+            margin-top: 5px;
+        }
+
+        .col-md-3.coll {
+            width: 270px;
+            float: left;
+            padding-right: 0px;
+        }
+
+        .col-md-8 {
+            padding-right: 0px;
+            width: 589px;
+            float: left;
+        }
+
+        .col-md-3 .panel-title {
+            background: #f6f6f6;
+            color: #484848;
+            font-size: 18px;
+            border: #f6f6f6;
+        }
+
+        .col-md-3 .panel-concet {
+            background: #f6f6f6;
+        }
+
+        #div_User ul li img {
+            width: 36px;
+            height: 36px;
+            margin-left: 20px;
+        }
+
+        #div_User ul li {
+            margin: 10px 0px;
+        }
+
+            #div_User ul li label {
+                color: 16px;
+                color: #959595;
+                margin-left: 10px;
+            }
+
+        .panel-footer {
+            height: 140px;
+            padding: 0px;
+            background: #fff;
+            border-bottom: none !important;
+        }
+
+            .panel-footer input {
+                height: 80px;
+                padding: 0px;
+                margin: 0px;
+                border: none;
+                padding-left: 20px;
+                outline: none;
+                -webkit-appearance: none;
+            }
+
+        input::-webkit-input-placeholder {
+            color: #dfdfdf;
+            font-size: 16px;
+        }
+
+        input::-moz-placeholder {
+            color: #dfdfdf;
+            opacity: 1;
+            font-size: 16px;
+        }
+
+        input::-ms-input-placeholder {
+            color: #dfdfdf;
+            font-size: 16px;
+        }
+
+        .panel-footer .col-md-12 {
+            text-align: right
+        }
+
+            .panel-footer .col-md-12 .btn {
+                width: 120px;
+                height: 36px;
+                background: #2f9b6f;
+                color: #fff;
+                border: none;
+            }
+
+        .panel-footer .row {
+            margin-right: -0px;
+            margin-left: -0px;
+        }
+
+        .col_sis {
+            width: 789px;
+            float: left;
+            box-shadow: 0px 0px 10px 0px #ccc;
+        }
+
+        .col-md-3 .colell {
+            width: 200px;
+            float: left;
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            padding: 5px 10px 0;
+            height: 88px;
+            line-height: 20px;
+            border: none;
+            overflow: auto;
+            resize: none;
+            background: 0 0;
+            outline: none;
+        }
+
+        /*css主要部分的样式*/
+
+        /*定义滚动条宽高及背景，宽高分别对应横竖滚动条的尺寸*/
+
+        ::-webkit-scrollbar {
+            width: 5px; /*对垂直流动条有效*/
+            height: 5px; /*对水平流动条有效*/
+        }
+
+        /*定义滚动条的轨道颜色、内阴影及圆角*/
+        ::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px #f6f6f6;
+            background-color: rosybrown;
+            border-radius: 3px;
+        }
+
+
+        /*定义滑块颜色、内阴影及圆角*/
+        ::-webkit-scrollbar-thumb {
+            border-radius: 7px;
+            -webkit-box-shadow: inset 0 0 6px #eeeeee;
+            background-color: #E8E8E8;
+        }
+
+        /*定义两端按钮的样式*/
+        ::-webkit-scrollbar-button {
+            background-color: #f6f6f6;
+        }
+
+        /*定义右下角汇合处的样式*/
+        ::-webkit-scrollbar-corner {
+            background: #ffffff;
+        }
+
+        ::-webkit-scrollbar-track-piece {
+            background-color: #f6f6f6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" style="margin-top: 10px">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="panel panel-primary">
+                    <div class="panel-heading" id="ChatRoomTitle">匿名聊天室</div>
+                    <div id="div_msgbody" class="panel-body" style="min-height: 400px; max-height: 400px; overflow: auto; max-width: 850px;margin-bottom: 10px;">
+                        <div id="div_msg" style='word-wrap: break-word; word-break: break-word;'></div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <textarea id="message" placeholder="在此输入聊天内容"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <button id="startRecording" onclick="recOpen()">开始录音</button>
+                            <button id="stopRecording" onclick="recStop()" style="display:none;">停止录音并发送</button>
+                            <button id="btn_Send" type="button" class="btn btn-info">发送</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var UserList = [];//@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model, Newtonsoft.Json.Formatting.Indented, new Newtonsoft.Json.JsonSerializerSettings{ ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver() }));
+        var jsonGroup = [];//@Html.Raw(Json.Encode(ViewBag.Group)) ;
+        var userAvatar = '../wwwroot/images/touxiang.png';
+        var GroupId = 1;
+        var userNickName = "";//昵称
+            var notification;//消息
+
+
+            if (UserList != null && UserList.length > 0) {
+                GroupId = 1;
+                $("#ChatRoomTitle").html(UserList[0].chatGroupName);
+                //ShowMsg();
+            }
+
+            while (!userNickName) {
+                    userNickName = window.prompt("请输入昵称！");
+            }
+            //对应后台的类ChatHub
+            var chatHub = $.connection.ChatRoomHub;
+            $.connection.hub.disconnected(function () {
+                setTimeout(function () {
+                    $.connection.hub.start();
+                }, 5000); // Restart connection after 5 seconds.
+            });
+                //添加用户
+            chatHub.client.NotifyUserEnter = function (nickName, users) {
+                console.log("加入");
+                console.log(users);
+                layer.msg("欢迎【" + nickName+ "】进入聊天室", { time: 2000, icon: 1 });
+                    //buildUserTemplate(users);
+                }
+                //用户离开
+            chatHub.client.NotifyUserLeft = function (nickName, users) {
+                console.log("离开");
+                console.log(users);
+                layer.msg("【" + nickName + "】离开聊天室..", { time: 2000, icon: 1 });
+                    //buildUserTemplate(users);
+                }
+                //处理消息内容
+            chatHub.client.NotifySendMessage = function (nickName, message,msgtype,msgId) {
+                debugger
+                //判断消息归属
+                AddMsg(nickName, message, "刚刚", msgtype, msgId)
+                //消息弹出框
+                if (Notification.permission == "granted") {
+                    notification = new Notification(nickName, {
+                        body: message,
+                        icon: userAvatar,
+                        renotify: true,
+                        tag: 1,
+                        noscreen: true
+                    });
+                    notification.onclick = function () {
+                        notification.close();
+                    };
+                } else if (Notification.permission != "denied") {
+                    Notification.requestPermission(function (permission) {
+                        notification = new Notification(nickName, {
+                            body: message,
+                            icon: userAvatar,
+                            renotify: true,
+                            tag: 1,
+                            noscreen: true
+                        });
+                        notification.onclick = function () {
+                            notification.close();
+                        };
+                    });
+                }
+                var objDiv = document.getElementById("div_msgbody");
+                objDiv.scrollTop = objDiv.scrollHeight;
+            }
+                //加入聊天组
+                $.connection.hub.start().done(function () {
+                    chatHub.server.userEnter(userNickName, "1111111111111111111", GroupId);
+                });
+                //聊天框发送消息
+                $("#message").keydown(function (event) {
+                    if (event.keyCode == 13) {
+                        if ($("#message").val() != "") {
+                            chatHub.server.sendMessage(userNickName, GroupId, $("#message").val());
+                            ///AddSendMessage(userNickName, $("#message").val());
+                            $("#message").val("");
+                        }
+                    }
+                });
+                //发送按钮
+            $("#btn_Send").click(function () {
+                    if ($("#message").val() != "") {
+                        chatHub.server.sendMessage(userNickName, GroupId, $("#message").val());
+                        //AddSendMessage(userNickName, $("#message").val());
+                        $("#message").val("");
+                    }
+                });
+
+        function AddMsg(nickName, message, time, msgtype, msgId) {
+            debugger
+                if (nickName == userNickName) {
+                    if (msgtype == "voice") {
+                        //var audioBlob = dataURLtoBlob(message.split(',')[1])
+                        //var audioUrl = URL.createObjectURL(audioBlob);
+                        $("#div_msg").append("<div class='clear-right clear-float' style='text-align: right;margin-top: 10px;'>\
+                        <div float:right='' >\
+                            <img src='"+ userAvatar + "' >\
+                                <span class='Teacher'>" + nickName + "</span>\
+                                <div class='demo clearfix fr'>\
+                                    <span class='triangle'></span>\
+                                    <audio id='"+ msgId + "' controls volume='1.0'>\
+                                    <source src='"+ message + "' type='audio/wav'></audio>\
+                                </div>\
+                                </div>\
+                            </div>");
+                        //document.getElementById(msgId).src = message;
+                    } else {
+
+                        $("#div_msg").append("<div class='clear-right clear-float' style='text-align: right;margin-top: 10px;'>\
+                        <div float:right='' >\
+                            <img src='"+ userAvatar + "' >\
+                                <span class='Teacher'>" + nickName + "</span>\
+                                <div class='demo clearfix fr'>\
+                                    <span class='triangle'></span>\
+                                    <div class='article' >"+ message + "</div>\
+                                </div>\
+                                </div>\
+                            </div>");
+                    }
+                }
+                else {
+                    if (msgtype == "voice") {
+                        //var audioBlob = dataURLtoBlob(message.split(',')[1])
+                        //var audioUrl = URL.createObjectURL(audioBlob);
+                        $("#div_msg").append("<div  class='clear-float clear-left'  style='text-align:left;margin-top: 10px;'>\
+                        <div>\
+                        <img src='"+ userAvatar + "' >\
+                            <span class='Teacher'>"+ nickName + "</span>\
+                            <div class='demo clearfix fr'>\
+                                <span class='triangle'></span>\
+                                <audio id='"+ msgId + "' controls volume='1.0'>\
+                                <source src='"+ message + "' type='audio/wav'></audio></div></div></div>");
+                        //document.getElementById(msgId).src = message;
+                    } else {
+
+                        $("#div_msg").append("<div  class='clear-float clear-left'  style='text-align:left;margin-top: 10px;'>\
+                        <div>\
+                        <img src='"+ userAvatar + "' >\
+                            <span class='Teacher'>"+ nickName + "</span>\
+                            <div class='demo clearfix fr'>\
+                                <span class='triangle'></span>\
+                                <div class='article' >"+ message + "</div></div></div></div>");
+                    }
+                }
+                var scrollDom = document.getElementById('div_msgbody');
+                scrollDom.scrollTop = scrollDom.scrollHeight
+            }
+        //语音相关
+        {
+            var rec, wave, recBlob;
+            /**调用open打开录音请求好录音权限  Call open to open the recording and request the recording permission**/
+            function recOpen() {//一般在显示出录音按钮或相关的录音界面时进行此方法调用，后面用户点击开始录音时就能畅通无阻了
+                debugger;
+                rec = null;
+                wave = null;
+                recBlob = null;
+                var newRec = Recorder({
+                    type: "mp3", sampleRate: 16000, bitRate: 16 //mp3格式，指定采样率hz、比特率kbps，其他参数使用默认配置；注意：是数字的参数必须提供数字，不要用字符串；需要使用的type类型，需提前把格式支持文件加载进来，比如使用wav格式需要提前加载wav.js编码引擎
+                    , onProcess: function (buffers, powerLevel, bufferDuration, bufferSampleRate, newBufferIdx, asyncEnd) {
+                        //录音实时回调，大约1秒调用12次本回调
+                        //document.querySelector(".recpowerx").style.width = powerLevel + "%";
+                        //document.querySelector(".recpowert").innerText = formatMs(bufferDuration, 1) + " / " + powerLevel;
+
+                        ////可视化图形绘制
+                        //wave.input(buffers[buffers.length - 1], powerLevel, bufferSampleRate);
+                    }
+                });
+
+                newRec.open(function () {//打开麦克风授权获得相关资源
+                    rec = newRec;
+
+                    //此处创建这些音频可视化图形绘制浏览器支持妥妥的
+                    //wave = Recorder.FrequencyHistogramView({ elem: ".recwave" });
+                    console.log("GVCa::已打开录音，可以点击录制开始录音了")
+
+                    recStart()
+                }, function (msg, isUserNotAllow) {//用户拒绝未授权或不支持
+                    console.log((isUserNotAllow ? "UserNotAllow, " : "") +"打开录音失败：" + msg);
+                });
+            };
+            function recStart() {//打开了录音后才能进行start、stop调用
+                if (rec && Recorder.IsOpen()) {
+                    recBlob = null;
+                    rec.start();
+                    console.log("已开始录音")
+
+                    $('#startRecording').hide()
+                    $('#stopRecording').show()
+                } else {
+                    console.log("未打开录音");
+                };
+            };
+            function recStop() {
+                if (!(rec && Recorder.IsOpen())) {
+                    console.log("未打开录音");
+                    return;
+                };
+                rec.stop(function (blob, duration) {
+
+
+                    recBlob = blob;
+                    console.log("停止录制");
+
+                    debugger
+                    //const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                   // const audioUrl = URL.createObjectURL(recBlob);
+                    var reader = new FileReader();
+                    reader.readAsDataURL(recBlob);
+                    var audioData = null;
+                    reader.onloadend = function () {
+                        audioData = reader.result;
+                        var postData = new Object();
+                        postData.nickName = userNickName;
+                        postData.GroupId = GroupId;
+                        postData.audioData = audioData;
+                        $.ajax({
+                            url: '/home/test',
+                            type: 'Post',
+                            data: { postData: postData },
+                            success: function (guid) {
+                                debugger
+
+                                //chatHub.server.sendVoiceMessage(postData);
+                            }
+                        })
+                        recClose()
+                        //chatHub.server.sendVoiceMessage(userNickName, audioData, "voice", guid)
+                        //chatHub.client.NotifySendMessage(userNickName, "1")
+                        $('#startRecording').show()
+                        $('#stopRecording').hide()
+                    };
+                }, function (msg) {
+                    reclog(Html_$T("kGZO::录音失败:") + msg, 1);
+                });
+
+                function recClose() {
+                    if (rec) {
+                        rec.close();
+                        console.log("已关闭资源");
+                    } else {
+                        console.log("未打开录音");
+                    };
+                };
+
+
+            };
+        }
+
+
+    </script>
+</body>
+</html>

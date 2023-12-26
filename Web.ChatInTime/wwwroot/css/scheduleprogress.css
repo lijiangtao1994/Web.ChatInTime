@@ -1,0 +1,519 @@
+﻿.PersonalCenter-body {
+    width: 910px;
+    background-color: #fafafa;
+}
+
+.PersonalCenter-contentleft {
+    width: 531px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.PersonalCenter-contentright {
+    width: 350px;
+    margin-left: 20px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.PersonalCenter-scheduleprogress {
+    width: 530px;
+    margin-top: 20px;
+}
+
+.PersonalCenter-ProgressHeader {
+    width: 505px;
+    margin-left: 43px;
+    margin-bottom: 15px;
+}
+
+
+    .PersonalCenter-ProgressHeader ul {
+        display: inline;
+        overflow: hidden;
+        white-space: nowrap;
+    }
+
+        .PersonalCenter-ProgressHeader ul li {
+            width: 36px;
+            list-style: none;
+            display: inline-block;
+            font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+            font-size: 14px;
+            color: #7a7a7a;
+        }
+
+.PersonalCenter-DateTitle {
+    display: inline-block;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 14px;
+    color: #7a7a7a;
+    margin-left: -15px;
+}
+
+.PersonalCenter-Progress {
+    width: 530px;
+}
+
+.PersonalCenter-ProgressContent {
+    width: 530px;
+    height: 78px;
+}
+
+.PersonalCenter-ProgressContentleft {
+    width: 45px;
+    height: 78px;
+    line-height: 78px;
+    display: inline-block;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 14px;
+    color: #7a7a7a;
+    text-align: center;
+    vertical-align: top;
+}
+
+.PersonalCenter-ProgressContentright {
+    width: 470px;
+    height: 78px;
+    display: inline-block;
+    border: 1px solid #e3e3e3;
+    border-bottom: 1px dashed #e3e3e3;
+    vertical-align: top;
+}
+
+.PersonalCenter-ProgressContentright1 {
+    width: 470px;
+    height: 78px;
+    display: inline-block;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px dashed #e3e3e3;
+    vertical-align: top;
+}
+
+.PersonalCenter-ProgressContentright2 {
+    width: 470px;
+    height: 78px;
+    display: inline-block;
+    border-left: 1px solid #e3e3e3;
+    border-right: 1px solid #e3e3e3;
+    border-bottom: 1px solid #e3e3e3;
+    vertical-align: top;
+}
+
+.PersonalCenter-ProgressName {
+    height: 78px;
+    width: 200px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 12px;
+    vertical-align: top;
+    line-height: 78px;
+    margin-left: 10px;
+}
+
+.PersonalCenter-ProgressDetail {
+    position: relative;
+    /*z-index: 999;*/
+    background-color: white;
+    border-radius: 8px;
+    -moz-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 8px 2px rgba(0, 0, 0, 0.1);
+    padding-right: 10px;
+    max-width: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    width: fit-content;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+}
+
+    .PersonalCenter-ProgressDetail div {
+        margin-left: 10px;
+    }
+
+        .PersonalCenter-ProgressDetail div span {
+            font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+            font-size: 13px;
+            color: #4f4f4f
+        }
+
+.PersonalCenter-ProgressAddress {
+    padding-left: 40px;
+}
+
+.PersonalCenter-InfectiousDiseases {
+    width: 350px;
+    /*height: 420px;*/
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    background-color: white;
+}
+
+.PersonalCenter-top {
+    width: 170px;
+    height: 19px;
+    margin-top: -15px;
+}
+
+.PersonalCenter-center {
+    width: 170px;
+    height: 22px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 10px;
+}
+
+.PersonalCenter-down {
+    width: 170px;
+    height: 20px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 16px;
+}
+
+.PersonalCenter-InfectiousDiseasesTitle {
+    background-image: url('/wwwroot/images/健康.png');
+    height: 94px;
+    width: 348px;
+    line-height: 50px;
+    text-align: center;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 8px 8px 0 0;
+}
+
+.PersonalCenter-InfectiousDiseasesTitleLeft {
+    display: inline-block;
+    width: 160px;
+    line-height: 94px;
+    vertical-align: top;
+}
+
+
+
+.PersonalCenter-InfectiousDiseasesTitleRight {
+    display: inline-block;
+    width: 180px;
+    line-height: 94px;
+    vertical-align: top;
+    margin-left: -30px;
+}
+
+.PersonalCenter-InfectiousDiseasesContent {
+    height: 120px;
+    text-align: center;
+    color: #fdac37;
+    font-size: 20px;
+}
+
+.PersonalCenter-InfectiousDiseasesContentTitle {
+    /*margin: 20px 15px 20px 15px;*/
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 25px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 16px;
+    color: #a4a4a4;
+    text-align: left;
+    height: 50px;
+}
+
+    .PersonalCenter-InfectiousDiseasesContentTitle span {
+        vertical-align: top;
+    }
+
+.PersonalCenter-InfectiousDiseasesContentHealthy {
+    margin-left: 10px;
+    margin-right: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.PersonalCenter-InfectiousDiseasesContent img {
+    margin-left: -10px;
+    vertical-align: middle;
+    padding-bottom: 20px;
+}
+
+.PersonalCenter-InfectiousDiseasesContentHealthy span {
+    margin-top: 10px;
+}
+
+.PersonalCenter-HazeIndex {
+    width: 350px;
+    /*height: 180px;*/
+}
+
+.PersonalCenter-HazeIndexTitle {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 20px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 16px;
+    color: #a4a4a4;
+    text-align: left;
+    height: 50px;
+}
+
+.PersonalCenter-HazeIndexContent {
+    width: 350px;
+    height: 100px;
+}
+
+.PersonalCenter-HazeIndexFoot {
+    height: 25px;
+    margin-right: 20px;
+}
+
+    .PersonalCenter-HazeIndexFoot a {
+        float: right;
+        font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+        font-size: 16px;
+        color: #52bf93;
+    }
+
+.PersonalCenter-HazeIndexTitle-Degree {
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 20px;
+    margin-left: 125px;
+    color: #fdac37;
+}
+
+.PersonalCenter-Reservation {
+    width: 350px;
+    height: 410px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.PersonalCenter-ReservationTitle {
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 18px;
+    color: #ffffff;
+    height: 50px;
+    line-height: 50PX;
+    text-align: center;
+    background-color: #2f9b6f;
+    border-radius: 8px 8px 0 0;
+}
+
+    .PersonalCenter-ReservationTitle span img {
+        float: right;
+        margin-top: 14px;
+        margin-right: 10px;
+    }
+
+.PersonalCenter-ReservationContent {
+    background-color: white;
+    height: 303px;
+    width: 348px;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(200,200,200,0);
+    overflow-y: auto;
+}
+
+
+    .PersonalCenter-ReservationContent::-webkit-scrollbar { /*滚动条整体样式*/
+        width: 10px; /*高宽分别对应横竖滚动条的尺寸*/
+        height: 1px;
+    }
+
+    .PersonalCenter-ReservationContent::-webkit-scrollbar-thumb { /*滚动条里面小方块*/
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        background: #e3e3e3;
+    }
+
+    .PersonalCenter-ReservationContent::-webkit-scrollbar-track { /*滚动条里面轨道*/
+        -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+        border-radius: 10px;
+        background: #f5f5f5;
+    }
+
+
+.sy-button-primary-outline {
+    padding: 4px;
+    border-radius: 4px;
+    border: 1px #2F9B6F solid;
+    outline: none;
+    color: #2F9B6F;
+    background-color: transparent;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 14px;
+}
+
+    .sy-button-primary-outline:hover {
+        color: white;
+        background-color: #2F9B6F;
+        border-color: #2F9B6F;
+    }
+
+.sy-button-primary-outline1 {
+    padding: 4px;
+    border-radius: 4px;
+    outline: none;
+    color: white;
+    border: 1px #e5e5e5 solid;
+    background-color: #e5e5e5;
+}
+
+
+.PersonalCenter-ReservationContentRow {
+    margin: 0 20px 10px 20px;
+    /*border-left:1px solid #ebebeb;*/
+    height: 40px;
+    line-height: 40px;
+    /*text-align:center;*/
+    vertical-align: middle;
+}
+
+.PersonalCenter-ReservationContentRowTime {
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 14px;
+    height: 40px;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 20px;
+    color: #9c9c9c;
+}
+
+.PersonalCenter-ReservationContentRow button {
+    height: 28px;
+    width: 70px;
+    float: right;
+    margin-top: 6px;
+}
+
+.PersonalCenter-ReservationContentRowBorder {
+    border-left: 1px solid #ebebeb;
+    height: 40px;
+    display: inline-block;
+    position: absolute;
+    margin-top: 25px;
+}
+
+.PersonalCenter-ReservationContentRowCircle {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #2F9B6F;
+    display: inline-block;
+    margin-left: -4px;
+}
+
+.PersonalCenter-ReservationContentRowCircle1 {
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: #d8d8d8;
+    display: inline-block;
+    margin-left: -4px;
+}
+
+.PersonalCenter-WorkFocus {
+    width: 350px;
+    /*height: 230px;*/
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.PersonalCenter-WorkFocusTitle {
+    width: 348px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 18px;
+    background-color: #2F9B6F;
+    border-radius: 8px 8px 0 0;
+    color: white;
+}
+
+.PersonalCenter-WorkFocusContent {
+    width: 348px;
+    /*height: 178px;*/
+    min-height:240px;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(200,200,200,0);
+}
+
+.PersonalCenter-WorkFocusContentRow {
+    margin: 10px 0 10px 10px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+    .PersonalCenter-WorkFocusContentRow span {
+        font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+        font-size: 16px;
+        color: #939393;
+        width: 160px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: left;
+    }
+
+.PersonalCenter-WorkFocusContentRowName {
+    float: left;
+}
+
+.PersonalCenter-WorkFocusContentRowTime {
+    float: right;
+    margin-right: 10px;
+}
+
+.PersonalCenter-Announcement {
+    width: 350px;
+    height: 230px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.PersonalCenter-AnnouncementTitle {
+    width: 348px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 18px;
+    background-color: #2F9B6F;
+    border-radius: 8px 8px 0 0;
+    color: white;
+}
+
+.PersonalCenter-AnnouncementContent {
+    width: 348px;
+    height: 178px;
+    background-color: white;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid rgba(200,200,200,0);
+}
+
+.PersonalCenter-AnnouncementContentRow {
+    margin: 10px 10px 10px 10px;
+    width: 348px;
+    height: 30px;
+    line-height: 30px;
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 16px;
+    color: #939393;
+}
+
+.PersonalCenter-PromptMessage {
+    font-family: PingFangSC-Regular,'Helvetica Neue',Arial,'Microsoft Yahei',Tahoma, 'Hiragino Sans GB',sans-serif;
+    font-size: 20px;
+    color: #939393;
+    width: 470px;
+    text-align: center;
+    height: 390px;
+    border: 1px solid #e3e3e3;
+    border-radius: 8px;
+    line-height: 390px;
+    margin-left: 45px;
+}
